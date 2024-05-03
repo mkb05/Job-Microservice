@@ -1,58 +1,50 @@
-package com.jobappmicro.companyms.company;
-
-import java.util.List;
-
-import org.springframework.boot.autoconfigure.batch.BatchProperties.Job;
+package com.spring.firstjobapp.review;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.spring.firstjobapp.company.Company;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Company {
+public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String title;
 	private String description;
+	private double rating;
+	private Long companyId;
 	
 	
-
-	public Company() {
-		super();
-	}
 	
-	
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	
+	public double getRating() {
+		return rating;
+	}
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
 
 
 
